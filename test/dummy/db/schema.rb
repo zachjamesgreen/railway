@@ -11,26 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223034305) do
+ActiveRecord::Schema.define(version: 20160223215513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "railway_comments", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "railway_comments_posts", id: false, force: :cascade do |t|
-    t.integer "railway_post_id",    null: false
-    t.integer "railway_comment_id", null: false
-  end
-
-  add_index "railway_comments_posts", ["railway_comment_id", "railway_post_id"], name: "idx_2", using: :btree
-  add_index "railway_comments_posts", ["railway_post_id", "railway_comment_id"], name: "ixd_1", using: :btree
 
   create_table "railway_posts", force: :cascade do |t|
     t.string   "title"

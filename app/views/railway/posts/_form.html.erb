@@ -2,12 +2,16 @@
   <%= f.input :title %>
   <%= f.input :author %>
   <%= f.input :snippet %>
-  <div id="epiceditor"><%= f.input :content %></div>
+  <%= f.input :content, id: 'editor' %>
+  <%= f.submit %>
 <% end %>
+<!-- , data: {provide: 'markdown'} -->
 <script>
-  var editor = new EpicEditor({
-    basePath: '/assets/epiceditor'
-  }).load();
+  var ed = $("#editor").markdown({
+    autofocus:false,
+    savable:false,
+    resize:'vertical'
+  })
 </script>
 <!-- <%= form_for @resource do |f| %>
   <% @resource_service.attrs_for_form.each do |attribute| %>
@@ -17,5 +21,5 @@
       <%= f.input attribute %>
     <% end %>
   <% end %>
-  <%= f.submit %>
+
 <% end %> -->

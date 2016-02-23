@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require godmin
- * require_tree .
+ *= require_tree .
+ *=require bootstrap-markdown.min.css
  *= require_self
  */
