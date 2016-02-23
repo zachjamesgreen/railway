@@ -1,0 +1,21 @@
+<%= form_for @resource do |f| %>
+  <%= f.input :title %>
+  <%= f.input :author %>
+  <%= f.input :snippet %>
+  <div id="epiceditor"><%= f.input :content %></div>
+<% end %>
+<script>
+  var editor = new EpicEditor({
+    basePath: '/assets/epiceditor'
+  }).load();
+</script>
+<!-- <%= form_for @resource do |f| %>
+  <% @resource_service.attrs_for_form.each do |attribute| %>
+    <% if f.object.class.reflect_on_association(attribute) %>
+      <%= f.association attribute %>
+    <% else %>
+      <%= f.input attribute %>
+    <% end %>
+  <% end %>
+  <%= f.submit %>
+<% end %> -->
