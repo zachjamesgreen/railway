@@ -1,3 +1,43 @@
 <%= render "layouts/header" %>
-<h1>Home</h1>
+
+
+<div class="row" id="content">
+  <div class="medium-8 columns">
+
+    <% @posts.each do |post| %>
+
+    <div class="blog-post">
+      <h3><%= link_to post.title, app_post_path(post.slug) %> <small>3/6/2015</small></h3>
+      <p><%= post.snippet %></p>
+      <div class="callout">
+        <ul class="menu simple">
+          <li><a href="#">Author: <%= post.author %></a></li>
+        </ul>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+
+  <div class="medium-3 columns" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#">Skyler</a></li>
+        <li><a href="#">Jesse</a></li>
+        <li><a href="#">Mike</a></li>
+        <li><a href="#">Holly</a></li>
+      </ul>
+      <h4>Authors</h4>
+      <ul>
+        <li><a href="#">Skyler</a></li>
+        <li><a href="#">Jesse</a></li>
+        <li><a href="#">Mike</a></li>
+        <li><a href="#">Holly</a></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
 <%= render "layouts/footer" %>

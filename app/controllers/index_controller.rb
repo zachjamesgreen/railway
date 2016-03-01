@@ -1,9 +1,10 @@
 class IndexController < ActionController::Base
   def index
-    puts 'INDEX'
+    @posts = Railway::Post.all
   end
 
-  def show
-    @posts = Railway::Post.all
+  def show()
+    @post = Railway::Post.find_by_slug(params['slug'])
+    render 'layouts/errors/404.html.erb' if !@post
   end
 end

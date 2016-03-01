@@ -1,9 +1,7 @@
 <%= render "layouts/header" %>
 <h1>Show</h1>
+<%= @post.title %>
+<%= @post.content%>
 
-<% @posts.each do |post| %>
-  <%= post.title %>
-  <%= raw to_markdown(post.content) %>
-  <br>
-<% end %>
+
 <%= render "layouts/footer" %>
