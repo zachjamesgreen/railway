@@ -1,4 +1,4 @@
 Railway::Engine.routes.draw do
   resources :posts
-  root to: "application#welcome"
+  root to: "home#index"
 end

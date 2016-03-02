@@ -1,0 +1,30 @@
+<%= render partial: "breadcrumb" %>
+<%= render partial: "scopes" %>
+<%= render partial: "filters" %>
+<!-- Add back in later -->
+<%# render partial: "actions" %>
+
+
+<% @resources.each do |r| %>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h3><%= r.title %> <small>Create On <%= r.created_at %></small> <small>Last Updated <%= r.updated_at %></small></h3>
+
+    </div>
+  </div>
+
+  <div class="panel-body">
+    <p><%= r.snippet %></p>
+    <div>
+      <ul class="nav nav-pills nav-justified">
+        <li><a href="#">Edit</a></li>
+        <li><a href="#">View on Site</a></li>
+        <li><a href="#">Destroy</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<% end %>
+<%= render partial: "pagination" %>

@@ -1,6 +1,11 @@
 module Railway
   class PostService
     include Godmin::Resources::ResourceService
+    filter :title
+
+    def filter_title(resources, value)
+      resources.where("title LIKE ?", "%#{value}%")
+    end
 
     def resource_class
       Railway::Post
