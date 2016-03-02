@@ -6,7 +6,7 @@ module Railway
       Railway::Post
     end
 
-    attrs_for_index *Post.column_names
+    attrs_for_index :title, :author, :created_at, :updated_at
     attrs_for_show *Post.column_names
     attrs_for_form *Post.column_names
   end
