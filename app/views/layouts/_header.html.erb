@@ -8,7 +8,7 @@
 
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-  <%= yeild(:head) %>
+  <%= yield(:head) %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,7 +16,7 @@
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text"><%= link_to 'Railway', '/' %></li>
+      <li><%= link_to 'Railway', '/' %></li>
     </ul>
   </div>
   <div class="top-bar-right">

@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "godmin"
   s.add_dependency "redcarpet"
   s.add_dependency 'foundation-rails'
+  s.add_dependency 'will_paginate', '~> 3.0.6'
 
 
   s.add_development_dependency "pg"
