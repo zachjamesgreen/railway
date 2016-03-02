@@ -1,0 +1,19 @@
+<%= render partial: "breadcrumb" %>
+
+<div class="row">
+  <div class="col-lg-3" id="post-form-left">
+    <ul class="list-group">
+      <li class="list-group-item"><strong>Title:</strong> <%= @resource.title %></li>
+      <li class="list-group-item"><strong>Author:</strong> <%= @resource.author %></li>
+      <li class="list-group-item"><strong>Snippet:</strong><br/> <%= @resource.snippet %></li>
+      <li class="list-group-item"><strong>Created:</strong> <%= @resource.created_at %></li>
+      <li class="list-group-item"><strong>Updated:</strong> <%= @resource.updated_at %></li>
+      <li class="list-group-item"><strong>URL:</strong> <%= link_to @resource.slug, "/post/#{@resource.slug}" %></li>
+
+    </ul>
+
+  </div>
+  <div class="col-lg-9" id="post-form-editor">
+    <%= @resource.content %>
+  </div>
+</div>
