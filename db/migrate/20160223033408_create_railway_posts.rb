@@ -5,7 +5,7 @@ class CreateRailwayPosts < ActiveRecord::Migration
       t.string :author
       t.string :snippet
       t.text :content
-
+      t.string :slug
       t.timestamps null: false
     end
   end
